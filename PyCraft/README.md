@@ -1,14 +1,5 @@
-# PyCraft
-
-## Overview
-**PyCraft** is a basic 3D block-based game built using the [Ursina Engine](https://www.ursinaengine.org/). The project features a simple first-person perspective, block placement, and destruction mechanics, similar to Minecraft. Players can explore the generated terrain and interact with the world by placing or removing blocks.
-
-![swappy-20241015-143505](https://github.com/user-attachments/assets/348cba48-ee30-469b-8e6e-31af675a9b1c)
-
-
-## Prerequisites
-* Python 3.x
-    * Ursina `pip install ursina`
+<h1 align="center">PyCraft</h1>
+<p align="center"><em>Basic 3D block-based game</em></p>
 
 ## Installation
 1. Clone the repository:
@@ -34,4 +25,4 @@ python main.py
 * `Right Mouse Button`: Place block
 * `1-4`: Change block
 
-### I'd appreciate any feedback or code reviews you might have!
+#### *I'd appreciate any feedback or code reviews you might have!*
