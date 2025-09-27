@@ -3,12 +3,12 @@
 [ext_resource type="MeshLibrary" uid="uid://bd58w4m1gkp7l" path="res://MeshLibraries/SpaceLibrary.tres" id="1_1uudp"]
 [ext_resource type="PackedScene" uid="uid://cwamta654nea" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_1x1bl"]
 [ext_resource type="PackedScene" uid="uid://7a0mp1n3rhcn" path="res://Enemy/enemy.tscn" id="2_sj11w"]
-[ext_resource type="Script" uid="uid://dp3qlqmsfg5lk" path="res://EnemyPath.gd" id="3_8h7ne"]
+[ext_resource type="Script" path="res://EnemyPath.gd" id="3_8h7ne"]
 [ext_resource type="PackedScene" uid="uid://bh4kmy3jp72ck" path="res://Base/base.tscn" id="3_fo8m1"]
-[ext_resource type="Script" uid="uid://6rr52qh6d4t1" path="res://TurretManager.gd" id="5_gv6qr"]
+[ext_resource type="Script" path="res://TurretManager.gd" id="5_gv6qr"]
 [ext_resource type="PackedScene" uid="uid://ma2mdy3ffqnq" path="res://Turret/turret.tscn" id="6_lgiie"]
 [ext_resource type="FontFile" uid="uid://c5t0kmkfk3ed7" path="res://Assets/Asap/static/Asap-Bold.ttf" id="8_o6h5e"]
-[ext_resource type="Script" uid="uid://bepo0fy1u1iae" path="res://Bank.gd" id="8_rdecv"]
+[ext_resource type="Script" path="res://Bank.gd" id="8_rdecv"]
 [ext_resource type="PackedScene" uid="uid://d1q0u2vwprntv" path="res://DifficultyManager/difficulty_manager.tscn" id="9_s6ufo"]
 [ext_resource type="PackedScene" uid="uid://do42hi4eosvk6" path="res://UserInterface/victory_layer.tscn" id="10_p336n"]
 
@@ -87,7 +87,6 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
-path_rotation_accurate = false
 path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
@@ -102,7 +101,6 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
-path_rotation_accurate = false
 path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
@@ -116,7 +114,6 @@ path_interval_type = 0
 path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
-path_rotation_accurate = false
 path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
