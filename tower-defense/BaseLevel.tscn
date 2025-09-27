@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://csdm82b6qqccq"]
+[gd_scene load_steps=18 format=3 uid="uid://csdm82b6qqccq"]
 
 [ext_resource type="PackedScene" uid="uid://t2frre6d2dbe" path="res://RayPickerCamera/ray_picker_camera.tscn" id="1_knq2t"]
 [ext_resource type="MeshLibrary" uid="uid://dtog2xtfhg1nv" path="res://MeshLibraries/SpaceLibrary.tres" id="1_lvb7b"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://m6c7edhi1037" path="res://turret_manager.gd" id="5_cwwxe"]
 [ext_resource type="PackedScene" uid="uid://0vgchql5q7ct" path="res://Turret/turret.tscn" id="6_ufkdr"]
 [ext_resource type="Script" uid="uid://cmheh80ad3q0e" path="res://bank.gd" id="8_tv3th"]
+[ext_resource type="PackedScene" uid="uid://dmqs6k8gqo82b" path="res://DifficultyManager/difficulty_manager.tscn" id="9_now27"]
+[ext_resource type="Script" uid="uid://dctjchp1fkprx" path="res://DifficultyManager/difficulty_manager.gd" id="10_clh6v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dq0bh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,6 +39,13 @@ font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Curve" id="Curve_now27"]
+_limits = [0.25, 2.0, 0.0, 1.0]
+_data = [Vector2(1e-05, 2), 0.0, -1.7500175, 0, 1, Vector2(1, 0.25), -1.7500175, 0.0, 1, 0]
+point_count = 2
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
 [node name="BaseLevel" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -64,10 +73,11 @@ data = {
 "cells": PackedInt32Array(65535, 2, 0, 65530, 65535, 0, 4, 65535, 0, 65530, 65534, 0, 65531, 65534, 0, 65532, 65534, 0, 65533, 65534, 0, 65534, 65534, 0, 2, 65534, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 0, 2, 0, 65534, 2, 0, 65533, 2, 0, 65532, 2, 0, 65531, 2, 0, 65530, 2, 0, 65530, 0, 0, 65532, 0, 0, 65532, 1, 0, 65534, 65535, 0, 65534, 0, 0, 0, 1, 0, 2, 65535, 0, 1, 1, 0, 3, 1, 0, 2, 1, 0, 65535, 65535, 0, 0, 65535, 0, 1, 65535, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0)
 }
 
-[node name="EnemyPath" type="Path3D" parent="."]
+[node name="EnemyPath" type="Path3D" parent="." node_paths=PackedStringArray("difficulty_manager")]
 curve = SubResource("Curve3D_lvb7b")
 script = ExtResource("3_epnn3")
 enemy_scene = ExtResource("2_5x8ra")
+difficulty_manager = NodePath("../DifficultyManager")
 
 [node name="Road" type="CSGPolygon3D" parent="EnemyPath"]
 polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
@@ -145,5 +155,11 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Placeholder"
 label_settings = SubResource("LabelSettings_epnn3")
+
+[node name="DifficultyManager" parent="." instance=ExtResource("9_now27")]
+script = ExtResource("10_clh6v")
+spawn_time_curve = SubResource("Curve_now27")
+
+[node name="Timer" type="Timer" parent="DifficultyManager"]
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
