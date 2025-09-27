@@ -14,15 +14,12 @@ func victory() -> void:
 	if base.max_health == base.current_health:
 		star_2.modulate = Color.WHITE
 		health_label.visible = true
-	if bank.gold >= 500:
+	if bank.gold >= 150:
 		star_3.modulate = Color.WHITE
-		money_label.visible = true
-	
-	
+		money_label.visible = true	
 
 func _on_retry_button_pressed() -> void:
 	get_tree().reload_current_scene()
-
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

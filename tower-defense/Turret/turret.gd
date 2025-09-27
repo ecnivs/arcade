@@ -11,8 +11,7 @@ var target: PathFollow3D
 @onready var cannon: Node3D = $TurretBase/TurretTop/Cannon
 @onready var turret_base: Node3D = $TurretBase
 
-
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	target = find_best_target()
 	if target:
 		turret_base.look_at(target.global_position, Vector3.UP, true)
