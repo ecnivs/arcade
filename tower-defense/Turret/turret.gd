@@ -5,6 +5,7 @@ extends Node3D
 var enemy_path: Path3D
 var target: PathFollow3D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var turret_top: MeshInstance3D = $TurretBase/TurretTop
 
 func _physics_process(_delta: float) -> void:
@@ -18,6 +19,7 @@ func _on_timer_timeout() -> void:
 		add_child(shot)
 		shot.global_position = turret_top.global_position
 		shot.direction = global_transform.basis.z
+		animation_player.play("fire")
 
 func find_best_target() -> PathFollow3D:
 	var best_target = null
