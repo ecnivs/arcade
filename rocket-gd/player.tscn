@@ -1,9 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://drgldvpy4wbmu"]
+[gd_scene load_steps=19 format=3 uid="uid://drgldvpy4wbmu"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_ebikn"]
-[ext_resource type="AudioStream" uid="uid://benx0ojlvfcf6" path="res://Audio/SFX - Death Explosion.ogg" id="2_4ukqj"]
-[ext_resource type="AudioStream" uid="uid://56rh4lsldx47" path="res://Audio/SFX - Success.ogg" id="3_wepuj"]
-[ext_resource type="AudioStream" uid="uid://beleeq0aqmo4x" path="res://Audio/SFX - Main engine thrust.ogg" id="4_85505"]
+[ext_resource type="Script" uid="uid://dd8nypjokd62d" path="res://Player.gd" id="1_ebikn"]
+[ext_resource type="AudioStream" uid="uid://cwcjo2oq1yebj" path="res://Audio/SFX - Death Explosion.ogg" id="2_4ukqj"]
+[ext_resource type="AudioStream" uid="uid://cd1oixiiwylkp" path="res://Audio/SFX - Success.ogg" id="3_wepuj"]
+[ext_resource type="AudioStream" uid="uid://cm1kfsdw0ii58" path="res://Audio/SFX - Main engine thrust.ogg" id="4_85505"]
 [ext_resource type="PackedScene" uid="uid://dvgvb6rsjocao" path="res://Particles/booster_particles.tscn" id="5_aggt0"]
 [ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://Particles/explosion_particles.tscn" id="6_7ch4g"]
 [ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://Particles/success_particles.tscn" id="7_ld2jj"]
@@ -12,6 +12,8 @@
 [sub_resource type="CylinderMesh" id="CylinderMesh_4wk83"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7cg2f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dw050"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_rbdh5"]
 top_radius = 0.2
@@ -86,7 +88,7 @@ transform = Transform3D(0.990586, 0.136891, 0, -0.136891, 0.990586, 0, 0, 0, 1, 
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-material_override = ExtResource("8_dj1uw")
+material_override = SubResource("StandardMaterial3D_dw050")
 mesh = SubResource("CylinderMesh_rbdh5")
 
 [node name="Cockpit" type="MeshInstance3D" parent="Body"]
