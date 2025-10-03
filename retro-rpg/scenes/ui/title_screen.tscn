@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://gm3p584ffrv6"]
+[gd_scene load_steps=8 format=3 uid="uid://gm3p584ffrv6"]
 
 [ext_resource type="Texture2D" uid="uid://x38wrcgbsyb5" path="res://gfx/title/tree-3094982_1280.jpg" id="1_eb34j"]
+[ext_resource type="Script" uid="uid://d38lkeb6h8743" path="res://scenes/ui/title_screen.gd" id="1_r23qo"]
 [ext_resource type="FontFile" uid="uid://bkl6gl8urv1jn" path="res://fonts/alagard_by_pix3m-d6awiwp.ttf" id="2_aqpy5"]
 [ext_resource type="Theme" uid="uid://drjj6pv5d3b3u" path="res://themes/default_theme.tres" id="3_w8uqo"]
 [ext_resource type="Script" uid="uid://4qwxyppehhhi" path="res://scenes/ui/version_number.gd" id="4_a4ium"]
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r23qo")
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 layout_mode = 1
@@ -73,8 +75,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ButtonMenu" type="VBoxContainer" parent="Content/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="NewGameButton" type="Button" parent="Content/VBoxContainer/HBoxContainer/ButtonMenu"]
 layout_mode = 2
@@ -90,13 +94,6 @@ theme = ExtResource("3_w8uqo")
 theme_override_font_sizes/font_size = 30
 text = "Load Game"
 
-[node name="CreditsButton" type="Button" parent="Content/VBoxContainer/HBoxContainer/ButtonMenu"]
-layout_mode = 2
-focus_mode = 0
-theme = ExtResource("3_w8uqo")
-theme_override_font_sizes/font_size = 30
-text = "Credits"
-
 [node name="VersionNumber" type="Label" parent="."]
 layout_mode = 0
 offset_left = 10.0
@@ -108,3 +105,5 @@ text = "Version:"
 label_settings = SubResource("LabelSettings_r23qo")
 vertical_alignment = 1
 script = ExtResource("4_a4ium")
+
+[connection signal="pressed" from="Content/VBoxContainer/HBoxContainer/ButtonMenu/NewGameButton" to="." method="_on_new_game_button_pressed"]

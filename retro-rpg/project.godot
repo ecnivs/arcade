@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="RPG Gd"
-config/version="Prototype 1"
+config/version="Prototype 2"
 run/main_scene="uid://gm3p584ffrv6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://pe5dliyxindt"
+
+[autoload]
+
+Loader="*res://loader.gd"
 
 [display]
 
