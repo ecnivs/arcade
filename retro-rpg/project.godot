@@ -19,6 +19,7 @@ config/icon="uid://pe5dliyxindt"
 [autoload]
 
 Loader="*res://loader.gd"
+GameManager="*res://game_manager.gd"
 
 [display]
 
